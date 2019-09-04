@@ -85,12 +85,16 @@ class FooBarQixTests: XCTestCase {
         XCTAssertEqual(res , "QixQixQix")
     }
     
-    func test_if_number_is_divisible_by_MultipleOfDigits(){
+    //**** Step2 *****//
+    /* Rules
+      keep a trace of 0 in numbers, each 0 must be replace par char “*“.
+     ****************/
+    
+    func test_if_trace_of_zero_in_number(){
         let sut = FooBarQix()
         let digits = 3*5*7
         let res = sut.compute(String(digits))
-        XCTAssertEqual(res , "FooBarQixBar")
+        XCTAssertEqual(res , "FooBarQix*Bar")
     }
-    
 }
 

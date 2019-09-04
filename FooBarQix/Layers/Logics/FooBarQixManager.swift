@@ -75,6 +75,9 @@ extension FooBarQix{
                 mapStr.append(ValueEnum.bar.getValue())
             case "7":
                 mapStr.append(ValueEnum.qix.getValue())
+            case "0":
+                //TODO: Refacto /!\ Not in domain of FooBarQix ! just new rule of new business request
+                mapStr.append("*")
             default:
                 break
             }

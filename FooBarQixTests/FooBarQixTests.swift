@@ -9,26 +9,57 @@
 import XCTest
 @testable import FooBarQix
 
+
+struct FooBarQix {
+    func compute(_ string: String) -> String? {
+        guard let  number = Int(string) else{
+            return nil
+        }
+        
+        if number % 7 == 0 {
+            
+            return "Qix"
+        }
+        
+        if number % 5 == 0 {
+            return "Bar"
+        }
+        
+        if number % 3 == 0 {
+            
+            return "Foo"
+        }
+        
+        return string
+    }
+}
+
 class FooBarQixTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    //**** Step1 *****//
+    /* Rules
+     If the number is divisible by 3, write “Foo” instead of the number
+     If the number is divisible by 5, add “Bar”
+     If the number is divisible by 7, add “Qix”
+     For each digit 3, 5, 7, add “Foo”, “Bar”, “Qix” in the digits order.
+    ****************/
+    
+    func test_if_number_is_divisible_by_3(){
+        let sut = FooBarQix()
+        let res = sut.compute("9")
+        XCTAssert(res == "Foo")
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_if_number_is_divisible_by_5(){
+        let sut = FooBarQix()
+        let res = sut.compute("5")
+        XCTAssert(res == "Bar")
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_if_number_is_divisible_by_7(){
+        let sut = FooBarQix()
+        let res = sut.compute("7")
+        XCTAssert(res == "Qix")
     }
 
 }

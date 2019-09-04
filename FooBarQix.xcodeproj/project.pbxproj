@@ -13,7 +13,7 @@
 		B27D05F0231FF4DF000B7AE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B27D05EF231FF4DF000B7AE5 /* Assets.xcassets */; };
 		B27D05F3231FF4DF000B7AE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27D05F1231FF4DF000B7AE5 /* LaunchScreen.storyboard */; };
 		B27D05FE231FF4E0000B7AE5 /* FooBarQixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27D05FD231FF4E0000B7AE5 /* FooBarQixTests.swift */; };
-		B27D060D23201273000B7AE5 /* FooBarQixManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27D060C23201273000B7AE5 /* FooBarQixManager.swift */; };
+		B27D060D23201273000B7AE5 /* FooBarQix.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27D060C23201273000B7AE5 /* FooBarQix.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 		B27D05F9231FF4E0000B7AE5 /* FooBarQixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FooBarQixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B27D05FD231FF4E0000B7AE5 /* FooBarQixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooBarQixTests.swift; sourceTree = "<group>"; };
 		B27D05FF231FF4E0000B7AE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B27D060C23201273000B7AE5 /* FooBarQixManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooBarQixManager.swift; sourceTree = "<group>"; };
+		B27D060C23201273000B7AE5 /* FooBarQix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooBarQix.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +126,7 @@
 		B27D060B23201254000B7AE5 /* Logics */ = {
 			isa = PBXGroup;
 			children = (
-				B27D060C23201273000B7AE5 /* FooBarQixManager.swift */,
+				B27D060C23201273000B7AE5 /* FooBarQix.swift */,
 			);
 			path = Logics;
 			sourceTree = "<group>";
@@ -234,7 +234,7 @@
 			files = (
 				B27D05EB231FF4DE000B7AE5 /* ViewController.swift in Sources */,
 				B27D05E9231FF4DE000B7AE5 /* AppDelegate.swift in Sources */,
-				B27D060D23201273000B7AE5 /* FooBarQixManager.swift in Sources */,
+				B27D060D23201273000B7AE5 /* FooBarQix.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

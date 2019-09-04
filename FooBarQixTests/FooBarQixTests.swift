@@ -26,6 +26,9 @@ struct FooBarQix {
         }
         
         if number % 3 == 0 {
+            if number == 3{
+                return "FooFoo"
+            }
             
             return "Foo"
         }
@@ -61,5 +64,12 @@ class FooBarQixTests: XCTestCase {
         let res = sut.compute("7")
         XCTAssert(res == "Qix")
     }
+    
+    func test_if_number_is_divisible_by_3_and_number_equal_to_3(){
+        let sut = FooBarQix()
+        let res = sut.compute("3")
+        XCTAssert(res == "FooFoo")
+    }
+  
 
 }

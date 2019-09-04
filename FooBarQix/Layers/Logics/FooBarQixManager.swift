@@ -28,28 +28,34 @@ extension ValueEnum: CaseIterable{
 
 struct FooBarQix {
     
-    let fooDivided = 3
-    let barDivided = 5
-    let qixDivided = 7
+    let fooDivisor = 3
+    let barDivisor = 5
+    let qixDivisor = 7
     
     func compute(_ string: String) -> String {
         // -1 if string is not a number
         guard string.number != -1 else{
             return string
         }
-        
         let number = string.number
         var result = ""
         
-        if number % fooDivided == 0 {
+        if (!isNumberDivided(string.number)){
+            if let str = self.mappingNumberNotDivided(string){
+                result.append(str)
+            }
+            return result
+        }
+        
+        if number % fooDivisor == 0 {
             result.append(ValueEnum.foo.getValue())
         }
         
-        if number % barDivided == 0 {
+        if number % barDivisor == 0 {
             result.append(ValueEnum.bar.getValue())
         }
         
-        if number % qixDivided == 0 {
+        if number % qixDivisor == 0 {
             result.append(ValueEnum.qix.getValue())
         }
         
@@ -57,14 +63,18 @@ struct FooBarQix {
             result.append(str)
         }
         
-        if !result.isEmpty{
-            return result
-        }
-        return string
+        return result
     }
 }
 
 extension FooBarQix{
+    private func isNumberDivided(_ number: Int) -> Bool{
+        if (number % fooDivisor == 0) || (number % barDivisor == 0) || (number % qixDivisor == 0) {
+            return true
+        }
+        return false
+    }
+    
     private func mappingOfGivenNumber(_ stringNumber: String) -> String? {
         let mappingStr = stringNumber.map { (c) -> String in
             var mapStr = ""
@@ -81,8 +91,27 @@ extension FooBarQix{
             default:
                 break
             }
-            return mapStr
-            }.compactMap{$0}.joined()
+            return mapStr }
+            .compactMap{$0}
+            .joined()
+        
+        
+        return !mappingStr.isEmpty ? mappingStr : nil
+    }
+    
+    private func mappingNumberNotDivided(_ stringNumber: String) -> String? {
+        let mappingStr = stringNumber.map { (c) -> String in
+            var mapStr = ""
+            switch c{
+            case "0":
+                mapStr.append("*")
+            default:
+                mapStr.append(c)
+                break
+            }
+            return mapStr }
+            .compactMap{$0}
+            .joined()
         
         
         return !mappingStr.isEmpty ? mappingStr : nil

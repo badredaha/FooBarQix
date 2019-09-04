@@ -10,25 +10,91 @@ import XCTest
 @testable import FooBarQix
 
 class FooBarQixTests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    //**** Step1 *****//
+    /* Rules
+     If the number is divisible by 3, write “Foo” instead of the number
+     If the number is divisible by 5, add “Bar”
+     If the number is divisible by 7, add “Qix”
+     For each digit 3, 5, 7, add “Foo”, “Bar”, “Qix” in the digits order.
+     ****************/
+    
+    func test_if_number_is_divisible_by_3_with_One_as_input(){
+        let sut = FooBarQix()
+        let res = sut.compute("1")
+        XCTAssertEqual(res, "1")
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func test_if_number_is_divisible_by_3_with_Two_as_input(){
+        let sut = FooBarQix()
+        let res = sut.compute("2")
+        XCTAssertEqual(res, "2")
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func test_if_number_is_divisible_by_3_and_input_3(){
+        let sut = FooBarQix()
+        let res = sut.compute("3")
+        XCTAssertEqual(res, "FooFoo")
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_if_number_is_divisible_by_3_and_input_9(){
+        let sut = FooBarQix()
+        let res = sut.compute("9")
+        XCTAssertEqual(res, "Foo")
     }
-
+    
+    func test_if_number_is_divisible_by_3_and_input_15(){
+        let sut = FooBarQix()
+        let res = sut.compute("15")
+        XCTAssertEqual(res, "FooBarBar")
+    }
+    
+    
+    func test_if_number_is_divisible_by_5(){
+        let sut = FooBarQix()
+        let res = sut.compute("5")
+        XCTAssertEqual(res, "BarBar")
+    }
+    
+    func test_if_number_is_divisible_by_7(){
+        let sut = FooBarQix()
+        let res = sut.compute("7")
+        XCTAssertEqual(res, "QixQix")
+    }
+    
+    func test_if_number_is_divisible_by_3_and_intput_33(){
+        let sut = FooBarQix()
+        let res = sut.compute("33")
+        XCTAssertEqual(res , "FooFooFoo")
+    }
+    
+    func test_if_number_is_divisible_by_5_and_input_55(){
+        let sut = FooBarQix()
+        let res = sut.compute("55")
+        XCTAssertEqual(res , "BarBarBar")
+    }
+    
+    func test_if_number_is_divisible_by_5_and_input_51(){
+        let sut = FooBarQix()
+        let res = sut.compute("51")
+        XCTAssertEqual(res , "FooBar")
+    }
+    
+    func test_if_number_is_divisible_by_7_and_input_77(){
+        let sut = FooBarQix()
+        let res = sut.compute("77")
+        XCTAssertEqual(res , "QixQixQix")
+    }
+    
+    //**** Step2 *****//
+    /* Rules
+      keep a trace of 0 in numbers, each 0 must be replace par char “*“.
+     ****************/
+    
+    func test_if_trace_of_zero_in_number(){
+        let sut = FooBarQix()
+        let digits = 3*5*7
+        let res = sut.compute(String(digits))
+        XCTAssertEqual(res , "FooBarQix*Bar")
+    }
 }
+
